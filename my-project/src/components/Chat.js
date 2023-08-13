@@ -4,11 +4,12 @@ import SearchBar from "./SearchBar";
 import Messages from "./Messages";
 
 const Chat = () => {
-      const [data, setData] = useState([
-      ]);
+    const [data, setData] = useState([]);
+    const [count, setCount] = useState(0)
       
     function addMessages(message) {
         setData([...data, message]);
+        setCount(count+1)
     }
     
   return (
@@ -19,7 +20,7 @@ const Chat = () => {
           This Channel Is Company Wide Chatter
         </p>
         <div className="flex mr-5">
-          <p className="text-slate-400 mr-4">3|100</p>
+                  <p className="text-slate-400 mr-4">{count}|100</p>
           <AiOutlineUser />
         </div>
       </div>

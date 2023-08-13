@@ -11,6 +11,18 @@ const SearchBar = ({addMessages}) => {
       setInputValue(event.target.value);
     };
 
+
+    function generateRandomColor() {
+    const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+
+    return color;
+}
+
+
     const createMessage = () => {
         setInputValue('')
         const d = new Date();
@@ -18,6 +30,7 @@ const SearchBar = ({addMessages}) => {
         const m = d.getMinutes();
 
         const t = h + ":" + m;
+        
         const names = ["Ritish", "Neeru", "Titin", "Ragu", "Danu"]
         const index = Math.floor(Math.random() * 5);
 
@@ -25,8 +38,8 @@ const SearchBar = ({addMessages}) => {
           nickName: "JS",
           name: names[index],
           date: t,
-            message: inputValue,
-          
+          message: inputValue,
+          color: generateRandomColor()
         };
 
       addMessages(obj);

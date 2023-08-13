@@ -4,7 +4,7 @@ const Message = ({message}) => {
     return (
       <div className="flex flex-col">
         <div className="w-[12em] flex items-center ">
-          <p className="flex justify-center items-center bg-red-400 rounded-full h-[40px] w-[40px] text-white text-lg">
+                <p className="flex justify-center items-center rounded-full h-[40px] w-[40px] text-white text-lg" style={{backgroundColor: message.color}}>
             <p> {message.nickName} </p>
           </p>
           <p className="text-center text-lg font-semibold pl-3">{message.name}</p>
